@@ -8,10 +8,10 @@ import {
   updateKaryawan,
   deleteKaryawan,
 } from "../service/api/karyawanService";
-// --- UBAH IMPORT INI: Tambahkan 'jsPDF' di sini ---
+
 import { exportToCsv, exportToPdf, jsPDF } from "../Utils/exportsUtils";
-// -------------------------------------------------
-import { Button } from "../components/Elements/Button.jsx/Index"; // Path ini terlihat sedikit aneh, tapi kita biarkan dulu
+import { Button } from "../components/Elements/Button.jsx/Index";
+import { toast } from "react-toastify";
 
 export const KaryawanPage = () => {
   const [karyawanList, setKaryawanList] = useState([]);
@@ -61,7 +61,7 @@ export const KaryawanPage = () => {
         delete dataToUpdate.userId;
 
         await updateKaryawan(editingKaryawan.id, dataToUpdate);
-        alert("Data karyawan berhasil diperbarui!");
+        toast.success("Data karyawan berhasil diperbarui!");
       } else {
         await createKaryawan(formData);
         alert("Karyawan baru berhasil ditambahkan!");
@@ -83,7 +83,7 @@ export const KaryawanPage = () => {
     if (window.confirm("Apakah Anda yakin ingin menghapus karyawan ini?")) {
       try {
         await deleteKaryawan(id);
-        alert("Karyawan berhasil dihapus!");
+        toast.success("Karyawan berhasil dihapus!");
         fetchKaryawan(); // Panggil ulang untuk mendapatkan data terbaru yang sudah diurutkan
       } catch (err) {
         const errorMessage =

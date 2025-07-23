@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "bmw-app-be.up.railway.app/api";
+const API_URL =
+  import.meta.env.VITE_API_URL || "https://bmw-app-be.up.railway.app/api";
 
 export const axiosAuth = axios.create({
   baseURL: API_URL,

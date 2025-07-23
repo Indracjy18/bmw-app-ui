@@ -8,6 +8,7 @@ import {
 import { Dashboard } from "./Pages/dashboard.jsx";
 import { LoginPage } from "./Pages/login.jsx";
 import { KaryawanPage } from "./Pages/karyawan.jsx";
+import { RegisterPage } from "./Pages/register.jsx";
 
 // Komponen untuk Proteksi Rute (pastikan user sudah login)
 const ProtectedRoute = ({ children }) => {
@@ -21,36 +22,39 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Rute Publik */}
-        <Route path="/login" element={<LoginPage />} />
+    <div>
+      <h1>APLIKASI INI BEKERJA!</h1>
+      <Router>
+        <Routes>
+          {/* Rute Publik */}
+          <Route path="/login" element={<LoginPage />} />
 
-        {/* Rute yang diproteksi (membutuhkan login) */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/karyawan"
-          element={
-            <ProtectedRoute>
-              <KaryawanPage />
-            </ProtectedRoute>
-          }
-        />
+          {/* Rute yang diproteksi (membutuhkan login) */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/karyawan"
+            element={
+              <ProtectedRoute>
+                <KaryawanPage />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route path="/register" element={<RegisterPage />} />
-        {/* Rute Default saat pertama kali diakses */}
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        {/* Fallback untuk rute tidak ditemukan (opsional, bisa ke halaman 404 atau redirect) */}
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
-      </Routes>
-    </Router>
+          <Route path="/register" element={<RegisterPage />} />
+          {/* Rute Default saat pertama kali diakses */}
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          {/* Fallback untuk rute tidak ditemukan (opsional, bisa ke halaman 404 atau redirect) */}
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

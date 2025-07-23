@@ -1,26 +1,28 @@
-// vite.config.js
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  base: "/",
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   build: {
+    chunkSizeWarningLimit: 1000, // biar warning chunk > 500 KB hilang
     rollupOptions: {
-      treeshake: {
-        moduleSideEffects: (id) => {
-          // Tandai 'jspdf-autotable' sebagai modul dengan efek samping
-          if (id.includes("jspdf-autotable")) {
-            return true;
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return id
+              .toString()
+              .split("node_modules/")[1]
+              .split("/")[0]
+              .toString();
           }
-
-          return false;
         },
       },
     },
-  },
-  optimizeDeps: {
-    include: ["jspdf", "jspdf-autotable"],
   },
 });

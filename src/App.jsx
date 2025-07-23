@@ -5,9 +5,8 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { LoginPage } from "./Pages/login_temp.jsx";
 import { Dashboard } from "./Pages/dashboard.jsx";
-import { RegisterPage } from "./Pages/register.jsx";
+import { LoginPage } from "./Pages/login.jsx";
 import { KaryawanPage } from "./Pages/karyawan.jsx";
 
 // Komponen untuk Proteksi Rute (pastikan user sudah login)

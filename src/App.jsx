@@ -5,10 +5,10 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { LoginPage } from "./Pages/Login";
-import { Dashboard } from "./Pages/dashboard";
-import { RegisterPage } from "./Pages/register";
-import { KaryawanPage } from "./Pages/karyawan";
+import { LoginPage } from "./Pages/Login.jsx";
+import { Dashboard } from "./Pages/dashboard.jsx";
+import { RegisterPage } from "./Pages/register.jsx";
+import { KaryawanPage } from "./Pages/karyawan.jsx";
 
 // Komponen untuk Proteksi Rute (pastikan user sudah login)
 const ProtectedRoute = ({ children }) => {

@@ -8,7 +8,6 @@ import {
 import { LoginPage } from "./pages/login";
 import { KaryawanPage } from "./Pages/karyawan";
 import { Dashboard } from "./Pages/dashboard";
-import { FormRegister } from "./components/Fragments/FormRegister";
 import { RegisterPage } from "./Pages/register";
 
 // Komponen untuk Proteksi Rute (pastikan user sudah login)

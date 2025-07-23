@@ -47,7 +47,8 @@ function App() {
 
         <Route path="/register" element={<RegisterPage />} />
         {/* Rute Default saat pertama kali diakses */}
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
         {/* Fallback untuk rute tidak ditemukan (opsional, bisa ke halaman 404 atau redirect) */}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>

@@ -22,39 +22,36 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   return (
-    <div>
-      <h1>APLIKASI INI BEKERJA!</h1>
-      <Router>
-        <Routes>
-          {/* Rute Publik */}
-          <Route path="/login" element={<LoginPage />} />
+    <Router>
+      <Routes>
+        {/* Rute Publik */}
+        <Route path="/login" element={<LoginPage />} />
 
-          {/* Rute yang diproteksi (membutuhkan login) */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/karyawan"
-            element={
-              <ProtectedRoute>
-                <KaryawanPage />
-              </ProtectedRoute>
-            }
-          />
+        {/* Rute yang diproteksi (membutuhkan login) */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/karyawan"
+          element={
+            <ProtectedRoute>
+              <KaryawanPage />
+            </ProtectedRoute>
+          }
+        />
 
-          <Route path="/register" element={<RegisterPage />} />
-          {/* Rute Default saat pertama kali diakses */}
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          {/* Fallback untuk rute tidak ditemukan (opsional, bisa ke halaman 404 atau redirect) */}
-          <Route path="*" element={<Navigate to="/dashboard" replace />} />
-        </Routes>
-      </Router>
-    </div>
+        <Route path="/register" element={<RegisterPage />} />
+        {/* Rute Default saat pertama kali diakses */}
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        {/* Fallback untuk rute tidak ditemukan (opsional, bisa ke halaman 404 atau redirect) */}
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      </Routes>
+    </Router>
   );
 }
 

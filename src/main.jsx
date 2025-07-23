@@ -9,11 +9,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
     <ToastContainer
-      position="top-center" // Posisi notifikasi (bisa 'top-left', 'top-center', 'bottom-right', dll.)
-      autoClose={1000} // Notifikasi akan hilang setelah 5 detik (dalam ms)
-      hideProgressBar={false} // Tampilkan progress bar waktu notifikasi
-      newestOnTop={false} // Notifikasi baru muncul di bawah yang lama
-      closeOnClick // Tutup notifikasi saat diklik
+      position="top-center"
+      autoClose={1000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
       rtl={false}
       pauseOnFocusLoss
       draggable

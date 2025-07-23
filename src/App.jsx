@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { LoginPage } from "./Pages/Login.jsx";
+import { LoginPage } from "./Pages/login_temp.jsx";
 import { Dashboard } from "./Pages/dashboard.jsx";
 import { RegisterPage } from "./Pages/register.jsx";
 import { KaryawanPage } from "./Pages/karyawan.jsx";

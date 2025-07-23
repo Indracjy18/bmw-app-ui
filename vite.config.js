@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/login",
+  base: "/",
   build: {
     rollupOptions: {
       treeshake: {

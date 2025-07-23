@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "/",
   build: {
     rollupOptions: {
       treeshake: {
@@ -13,15 +14,13 @@ export default defineConfig({
           if (id.includes("jspdf-autotable")) {
             return true;
           }
-          // Untuk modul lain, biarkan Rollup melakukan tree-shaking secara normal
+
           return false;
         },
       },
     },
   },
   optimizeDeps: {
-    // Ini membantu memastikan Vite melakukan pre-bundling yang benar
-    // untuk dependensi ini selama pengembangan
     include: ["jspdf", "jspdf-autotable"],
   },
 });

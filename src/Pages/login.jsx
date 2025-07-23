@@ -4,7 +4,7 @@ import { LayoutForm } from "../components/Layouts/LayoutForm";
 
 export const LoginPage = () => {
   return (
-    <LayoutForm title="Login" type="login">
+    <LayoutForm title="login" type="login">
       <FormLogin />
     </LayoutForm>
   );
